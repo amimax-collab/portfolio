@@ -37,7 +37,7 @@ export default function Projects() {
         chips={['Responsive layout', 'Service pages', 'CCTV', 'Smart locks']}
         ghost="WATCH"
         status='Live'
-        href="https://https://j-tech-lilac.vercel.app/"
+        href="https://https://j-tech-lilac.vercel.app"
       >
         <CctvMock />
       </Project>
