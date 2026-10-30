@@ -1,0 +1,139 @@
+/* Global tokens and base styles */
+:root {
+  --bg: #f6f4ef;
+  --surface: #ece8df;
+  --fg: #14201b;
+  --muted: #5b655f;
+  --line: #d6d1c4;
+  --ink: #0d1a15;
+  --green: #11382b;
+  --on-green: #f3efe6;
+  --on-green-muted: #a9bdb2;
+  --sun: #c9a45c; /* brass accent (name kept so other files still work) */
+  --link: #1b5a43;
+  --display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+  --body: 'Instrument Sans', 'Segoe UI', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0a110e;
+    --surface: #121c17;
+    --fg: #ece8df;
+    --muted: #97a59c;
+    --line: #243129;
+    --green: #0f2e23;
+    --sun: #d2b06a;
+    --link: #d2b06a;
+    color-scheme: dark;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--sun);
+  outline-offset: 3px;
+}
+
+.gutter {
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+.inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.btn {
+  font-family: var(--mono);
+  font-size: 13px;
+  text-decoration: none;
+  padding: 13px 20px;
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn.sun {
+  background: var(--sun);
+  border-color: var(--sun);
+  color: var(--ink);
+}
+
+.btn .arr {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.btn:hover .arr {
+  transform: translateX(4px);
+}
+
+.progress {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 4px;
+  background: var(--sun);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  z-index: 50;
+}
+
+@keyframes ping {
+  0% { box-shadow: 0 0 0 0 rgba(201, 164, 92, 0.6); }
+  70%, 100% { box-shadow: 0 0 0 10px rgba(201, 164, 92, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

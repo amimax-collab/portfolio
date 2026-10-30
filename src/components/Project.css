@@ -1,0 +1,164 @@
+/* Intro */
+.intro {
+  padding-block: 88px 24px;
+}
+
+.intro h2 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(34px, 6vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  margin: 0;
+  max-width: 16em;
+  text-wrap: balance;
+}
+
+.intro h2 em {
+  font-style: normal;
+  color: var(--link);
+}
+
+/* Scroll reveal */
+.rise {
+  transform: translateY(36px);
+  transition: transform 0.9s cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+.rise.in {
+  transform: none;
+}
+
+/* Project rows */
+.project {
+  padding-block: 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: 56px;
+  align-items: center;
+}
+
+.project:nth-of-type(even) .copy {
+  order: 2;
+}
+
+@media (max-width: 860px) {
+  .project {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+  .project:nth-of-type(even) .copy {
+    order: 0;
+  }
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+}
+
+.copy h3 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(34px, 5vw, 56px);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.copy p {
+  margin: 0;
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 44ch;
+}
+
+.copy p b {
+  color: var(--fg);
+  font-weight: 500;
+}
+
+.status {
+  align-self: flex-start;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--link);
+  animation: ping 2s infinite;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chips li {
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 4px 11px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+/* Stage (tilting panel) */
+.stage {
+  position: relative;
+  border-radius: 24px;
+  background: var(--surface);
+  min-height: 500px;
+  display: grid;
+  place-items: center;
+  padding: 36px 16px;
+  overflow: hidden;
+  perspective: 900px;
+  min-width: 0;
+}
+
+.ghost {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.14em;
+  text-align: center;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(100px, 17vw, 210px);
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--line);
+  pointer-events: none;
+  user-select: none;
+}
+
+.tilt {
+  position: relative;
+  transition: transform 0.25s ease-out;
+  transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+  max-width: 100%;
+}
