@@ -7,7 +7,7 @@ export default function Projects() {
   return (
     <div>
       <Project
-        title="GateWay Plaza"
+        title="Delivery App"
         lead="A food delivery app."
         text="Browse dishes, fill a cart and place an order, in the style of Chowdeck and Glovo. Built in React with reusable components."
         chips={['React', 'JavaScript', 'CSS', 'Component design']}
