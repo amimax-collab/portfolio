@@ -4,7 +4,7 @@ import Stage from './Stage'
 export default function Project({ title, lead, text, chips, ghost, href, children, status }) {
   const ref = useReveal()
   return (
-    <article className="project">
+    <article className="project" id='project'>
       <div className="copy rise" ref={ref}>
         <span className="status">{status}</span>
         <h3>{title}</h3>

@@ -24,7 +24,7 @@ export default function Hero() {
           </a>
           <nav>
             <a href="#about">About</a>
-            <a href="#work">Work</a>
+            <a href="#project">Work</a>
             <a href="#contact">Contact</a>
           </nav>
         </div>
