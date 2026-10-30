@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { whatsappLink } from '../config'
 import { ChatIcon } from './WhatsAppButton'
 
-const EMAIL = 'fountain.com'
+const EMAIL = 'fountain@gmail.com'
 
 export default function Contact() {
   const [copied, setCopied] = useState(false)
@@ -23,7 +23,7 @@ export default function Contact() {
         <div className="inner">
           <p className="eyebrow">Contact</p>
           <h2>
-            Got a business that needs <em>a site</em>?
+            Got a business that needs <em>a website</em>?
           </h2>
           <p className="lead">Tell me what you want, and I will build it.</p>
 
