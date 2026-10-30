@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { whatsappLink } from '../config'
 import { ChatIcon } from './WhatsAppButton'
 
-const EMAIL = 'fountain@gmail.com'
+const EMAIL = 'fountaingid@gmail.com'
 
 export default function Contact() {
   const [copied, setCopied] = useState(false)
